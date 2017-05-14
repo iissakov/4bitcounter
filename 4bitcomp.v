@@ -83,34 +83,43 @@ module single_comp(
 	output L
 );
 
+reg L_o;
+reg EQ_o;
+reg G_o;
+
+assign G = G_o;
+assign L = L_o;
+assign EQ = EQ_o;
+
 //Combo block for 1-bit comparator logic
 always @(*)
 begin
 	if (a > b) begin
-		L = 0;
-		EQ = 0;
-		G = 1'b1;
+		L_o = 0;
+		EQ_o = 0;
+		G_o = 1'b1;
 	end
 	else if (a == b) begin
 		if (great) begin
-			L = 0;
-			EQ = 0;
-			G = 1'b1;
-	    end
-		else (less) begin
-			L = 1'b1;
-			EQ = 0;
-			G = 0;
-	    end
-		else (equal) begin
-			L = 0;
-			EQ = 1'b1;
-			G = 0;
+			L_o = 0;
+			EQ_o = 0;
+			G_o = 1'b1;
+	   end
+		else if (less) begin
+			L_o = 1'b1;
+			EQ_o = 0;
+			G_o = 0;
+	   end
+		else if (equal) begin
+			L_o = 0;
+			EQ_o = 1'b1;
+			G_o = 0;
 		end
+	end
 	else if (a < b) begin
-		L = 1'b1;
-		EQ = 0;
-		G = 0;
+		L_o = 1'b1;
+		EQ_o = 0;
+		G_o = 0;
 	end
 end
 
