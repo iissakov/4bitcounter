@@ -41,7 +41,7 @@ single_comp single_comp_1(
 	.b		(b[1]),
 	.great	(g_0),
 	.equal	(eq_0),
-	.less	(l_0)
+	.less	(l_0),
 	.G		(g_1),
 	.EQ		(eq_1),
 	.L		(l_1)
@@ -52,7 +52,7 @@ single_comp single_comp_2(
 	.b		(b[2]),
 	.great	(g_1),
 	.equal	(eq_1),
-	.less	(l_1)
+	.less	(l_1),
 	.G		(g_2),
 	.EQ		(eq_2),
 	.L		(l_2)
@@ -63,7 +63,7 @@ single_comp single_comp_3(
 	.b		(b[3]),
 	.great	(g_2),
 	.equal	(eq_2),
-	.less	(l_2)
+	.less	(l_2),
 	.G		(G),
 	.EQ		(EQ),
 	.L		(L)
